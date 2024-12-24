@@ -1,0 +1,373 @@
+/* General Styles */
+
+h2 {
+    text-align: center;
+    margin-top: 2rem;
+    color: #fbf9f9;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    border: 1px solid #4f4e4e;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    background: #100f0f;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.grid-item p {
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item a{
+    text-decoration: none;
+}
+.grid-item a:hover{
+    color: #f3f704;
+}
+
+
+/* Skills Section */
+.skills {
+    padding: 3rem;
+    background: #302f2f;
+}
+
+.skills h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #fffdfd;
+}
+
+.skills .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skills .skill-item {
+    background: #6e0072;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills .skill-item:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.skills .skill-item p {
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+    font-size: 20px;
+}
+.skills .skill-item p i{
+    color: white;
+    font-size: 30px;
+
+}
+
+/* Experience Section */
+.experience {
+    padding: 2rem;
+    background: #121212;
+}
+
+.experience h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.experience .timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    border-left: 3px solid #fefefe;
+}
+
+.experience .timeline-item {
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.experience .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 1rem;
+    width: 16px;
+    height: 16px;
+    background: #41fd02;
+    border-radius: 50%;
+}
+
+.experience .timeline-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #fdfdfd;
+}
+
+.experience .timeline-item p {
+    margin: 0.5rem 0 0;
+    color: #c4c2c2;
+}
+
+/* Footer */
+footer {
+    background: #444;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #1e1d1d;
+    color: #fefefe;
+}
+
+
+
+/* About Section */
+#about {
+    background: #181717;
+    padding: 4px 15px 30px 15px;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1292px;
+    margin: 0 auto;
+}
+
+.about-image {
+    flex: 1 1 300px;
+    margin: 20px;
+    text-align: center;
+}
+
+.about-image img {
+    border-radius: 50%;
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border: 5px solid #efe8ef;
+}
+
+.about-content {
+    flex: 2 1 600px;
+    margin: 20px;
+    padding: 20px;
+    background: #252424;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    justify-content: center;
+}
+
+.about-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-content ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.about-content ul li::before {
+    content: "✔️";
+    color: #5cb85c;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-content {
+        padding: 15px;
+    }
+}
+span{
+    color: rgb(255, 55, 0);
+}
+
+.sp{
+    color:darkorange;
+}
+
+.social a{
+  opacity: 1;
+ position: relative; 
+transition: .5s ease;
+display:inline-flex;
+width:35px;
+height: 35px;
+justify-content: center;
+align-items: center;
+border:2px solid #F99417;
+background: #efeeed;
+text-decoration: none;
+color: #F99417;border-radius: 50%;
+margin:30px 15px 30px 0;
+}
+.social a:hover{
+
+background:#F99417;
+color: aqua;
+box-shadow: 0 0 20px #F99417;
+
+}
+.btn{
+text-decoration: none;
+display: inline-block;
+padding: 13px 20px;
+background: #FF7000;
+border-radius: 60px;
+box-shadow: 0 0 solid#f7f7f7;
+color: #f7f7f7;
+letter-spacing: 1px;
+font-size: 17px;
+font-weight: 600;
+
+}
+.btn:hover{
+
+color: #e5ff00;
+
+}
+
+
+/* Header */
+/* Default header styles */
+/* General header styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0; /* Sticks the header at the top */
+    z-index: 1000; /* Ensures the header stays on top of other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation styles */
+header nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 18px;
+}
+
+header nav ul li {
+    margin: 10px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #f8e701; /* Active color */
+    border-bottom: 3px solid #ffffff; /* Adds an underline effect */
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+    header nav ul {
+        flex-direction: row; /* Stacks the menu items vertically */
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 5px 0; /* Adjust margin for smaller screens */
+    }
+
+    header nav ul li a {
+        font-size: 8px; /* Adjust font size for smaller screens */
+    }
+}

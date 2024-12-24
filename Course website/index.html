@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FREETECH Courses</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #110c0c;
+            color: #ffffff;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #1a1a1a;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        header a:hover {
+            color: #ffa500;
+        }
+        .container {
+            padding: 2rem;
+        }
+        .search-bar {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .search-bar input {
+            padding: 0.5rem;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 5px;
+            border: 1px solid #f3d303;
+        }
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 1.5rem;
+        }
+        .course-card {
+            background: #1e1e1e;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        .course-card img {
+            width: 100%;
+            max-height: 550px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+        .course-card button {
+            background-color: #00c3ff;
+            border: none;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .course-card button:hover {
+            background-color: #ff8500;
+        }
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .about img {
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+        }
+        .about-text {
+            max-width: 600px;
+        }
+        .about-text h2 {
+            margin-bottom: 1rem;
+        }
+        .about-text p {
+            line-height: 1.6;
+        }
+        .about-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .card {
+            background: #1e1e1e;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 150px;
+        }
+        .card h3 {
+            margin-bottom: 0.5rem;
+            color: #ffa500;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #1a1a1a;
+            margin-top: 2rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #1a1a1a;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header a {
+                margin: 0.5rem 0;
+            }
+            .courses {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .course-card {
+                padding: 1rem;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1024px) {
+    .courses {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .courses {
+        grid-template-columns: 1fr; /* Single column for small screens */
+    }
+}
+        
+    </style>
+</head>
+<body>
+    <header>
+    <h1>FREETECH Courses</h1>
+    <nav>
+        <a href="#" id="courses-link">Courses</a>
+        <a href="#" id="about-link">About</a>
+    </nav>
+</header>
+   
+
+    <div id="content" class="container">
+        <!-- Dynamic content will go here -->
+    </div>
+
+    <footer>
+        <p>&copy; 2025 FREETECH Courses</p>
+    </footer>
+
+    <script>
+        const coursesPage = `
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Search courses..." oninput="filterCourses()">
+            </div>
+            <div class="courses" id="course-list">
+                <!-- Example course cards (you can duplicate for 50 courses) -->
+                <div class="course-card">
+                    <img src="cy.png" alt="Python">
+                    <h3>Cyber Security Course 2025</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/complete-security-engineer-megacourse-from-zero-to-hero/?referralCode=07EF8C10729232C02865','_blank')">Enroll Now</button>
+                </div>
+                <div class="course-card">
+                    <img src="python.png" alt="Python">
+                    <h3>Complete Python Course 2025</h3>
+                    <button onclick="window.open('https://skl.sh/4dJTfLE','_blank')">Enroll Now</button>
+                </div>
+                <div class="course-card">
+                    <img src="powerbi.jpg" alt="Python">
+                    <h3>Complete Power Bi Course 2025</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/complete-power-bi-course-for-beginners-to-intermediate/?referralCode=B3C5B55FD5827A36A02B','_blank')">Enroll Now</button>
+                </div>
+                <div class="course-card">
+                    <img src="ui.jpg" alt="Python">
+                    <h3>Complete UI UX Design Course 2025</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/beginner-ui-ux-youtube-design-course-from-scratch-in-figma/?referralCode=5D9D607C452B09EDEAEF','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="facerecog.jpeg" alt="Python">
+                    <h3>Complete Face Recognition Project</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/complete-face-recognition-using-sql-database-project/?referralCode=4D5F2C63C44002FFEA92','_blank')">Enroll Now</button>
+                </div>
+                <div class="course-card">
+                    <img src="faceattend.jpg" alt="Python">
+                    <h3>Face Recognition Attendance Project</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/complete-face-recognition-attendance-system-using-knn/?referralCode=6F2392423EF5FAE5FB6A','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="swift.png" alt="Python">
+                    <h3>Swift Programming Course</h3>
+                    <button onclick="window.open('https://skl.sh/3A6Uab8','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="sqlite.jpg" alt="Python">
+                    <h3>SQLITE Course 2025</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/complete-sqlite-crash-course-from-zero-to-hero/?referralCode=DD8D79F4AC148555B7C6','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="oracle.jpg" alt="Python">
+                    <h3>Complete Oracle SQL Course</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/complete-sql-crash-course-from-zero-to-hero/?referralCode=B05025EC9542C3184991','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="mysql.png" alt="Python">
+                    <h3>MYSQL Course 2025</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/complete-mysql-crash-course-from-zero-to-hero/?referralCode=621B6C20DF90AF594077','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="js.jpg" alt="Python">
+                    <h3>Complete Javascript Course 2025</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/javascript-and-php-ultimate-course-for-beginners/?referralCode=4F75EB34891130FDDA39','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="java.jpg" alt="Python">
+                    <h3>Complete Java Course 2025</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/c-c-c-java-ultimate-course-for-beginners/?referralCode=E59F8FCE0D40341396FF','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="c.png" alt="Python">
+                    <h3>Complete C Course 2025</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/c-c-c-java-ultimate-course-for-beginners/?referralCode=E59F8FCE0D40341396FF','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="c++.jpg" alt="Python">
+                    <h3>Complete C++ Course 2025</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/c-c-c-java-ultimate-course-for-beginners/?referralCode=E59F8FCE0D40341396FF','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="csharp.jpeg" alt="Python">
+                    <h3>Complete C# Course 2025</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/c-c-c-java-ultimate-course-for-beginners/?referralCode=E59F8FCE0D40341396FF','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="DataS.png" alt="Python">
+                    <h3>Complete Data Science Course 2025</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/complete-data-science-machine-learning-course/?referralCode=38006D82CE5510612A3E','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="flutter.png" alt="Python">
+                    <h3>Complete Flutter App Project</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/complete-picture-to-pdf-converter-app-using-flutter/?referralCode=9BF61DBCDB9414C7AE04','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="port.png" alt="Python">
+                    <h3>Complete Portfolio Website Design</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/complete-portfolio-website-using-html-css-netlify-project/?referralCode=6914B909F4EEFD572A5F','_blank')">Enroll Now</button>
+                </div><div class="course-card">
+                    <img src="mac.jpg" alt="Python">
+                    <h3>Machine Learning Course 2025</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/complete-data-science-machine-learning-course/?referralCode=38006D82CE5510612A3E','_blank')">Enroll Now</button>
+                    </div><div class="course-card">
+                    <img src="7day.png" alt="Python">
+                    <h3>7 Days 7 Machine Learning Projects</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/7-days-7-machine-learning-python-projects-from-scratch/?referralCode=2AE9113ED2B2FE768DCC','_blank')">Enroll Now</button>
+                   </div><div class="course-card">
+                    <img src="5day.png" alt="Python">
+                    <h3>5 Days 5 Machine Learning Projects</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/5-days-5-machine-learning-projects-from-scratch/?referralCode=A7A15706EDD722DEA662','_blank')">Enroll Now</button>
+                    </div>
+                    <div class="course-card">
+                    <img src="rock.png" alt="Python">
+                    <h3>Python Game Development Project</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/complete-python-game-development-course-from-zero-to-hero/?referralCode=A7E13BFC4E88D0FBEFBE','_blank')">Enroll Now</button> 
+                    </div>
+                    <div class="course-card">
+                    <img src="deep.png" alt="Python">
+                    <h3>Complete 5+ Deep Learning Projects</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/real-world-5-deep-learning-projects-complete-course/?referralCode=F46787D4DE229D3228EB','_blank')">Enroll Now</button>
+                </div>
+                    <div class="course-card">
+                    <img src="yolov11.png" alt="Python">
+                    <h3>YOLOV11 Project Course 2025</h3>
+                    <button onclick="window.open('https://www.udemy.com/course/complete-goat-detection-and-counting-using-yolov11/?referralCode=B0CCDCE093B95E0064C2','_blank')">Enroll Now</button>
+                </div>
+               
+            </div>`;
+
+                    const aboutPage = `
+            <div class="about">
+                <img src="qq.png" alt="Instructor">
+                <div class="about-text">
+                    <h2>Arunnachalam RS</h2>
+                    <p>With 4+ years of experience, I have taught over 90k+ students and created 50 courses to help people master software engineering and programming skills for life.</p>
+                    <p><strong>Phone:</strong> +917339510734</p>
+                    <p><strong>Email:</strong> visualstudiocode2002@gmail.com</p>
+                </div>
+            </div>
+            <div class="about-cards">
+                <div class="card">
+                    <h3>90k+</h3>
+                    <p>Students Taught</p>
+                </div>
+                <div class="card">
+                    <h3>3k</h3>
+                    <p>YouTube Fans</p>
+                </div>
+                <div class="card">
+                    <h3>4+</h3>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="card">
+                    <h3>50</h3>
+                    <p>Coding Courses</p>
+                </div>
+            </div> `;
+
+        document.getElementById('content').innerHTML = coursesPage;
+
+        // Add event listeners to navigation links
+        document.getElementById('courses-link').addEventListener('click', () => {
+            document.getElementById('content').innerHTML = coursesPage;
+        });
+
+        document.getElementById('about-link').addEventListener('click', () => {
+            document.getElementById('content').innerHTML = aboutPage;
+        });
+
+
+       
+        function filterCourses() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const courses = document.querySelectorAll('.course-card');
+
+            courses.forEach(course => {
+                const title = course.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    course.style.display = '';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
